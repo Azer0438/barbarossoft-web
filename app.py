@@ -1,12 +1,18 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory, request
 
 app = Flask(__name__)
+
+
+@app.route('/sitemap.xml')
+@app.route('/robots.txt')
+def static_from_root():
+    return send_from_directory(app.static_folder, request.path[1:])
 
 # --- ANA SAYFA ROTASI ---
 @app.route("/", methods=["GET"])
 def ana_sayfa():
     
-    # 1. PROJELER VERİSİ (HTML'e gönderilecek)
+    # 1. PROJELER VERİSİ
     projeler = [
         {
             "isim": "Seferoğlu Nakliyat",
@@ -31,7 +37,7 @@ def ana_sayfa():
         }
     ]
 
-    # 2. YORUMLAR VERİSİ (HTML'e gönderilecek)
+    # 2. YORUMLAR VERİSİ
     yorumlar = [
         {
             "isim": "Emrah Taşdemir",
@@ -59,10 +65,9 @@ def ana_sayfa():
         }
     ]
     
-    # HTML dosyasını bu verilerle birlikte aç
     return render_template("index.html", projeler=projeler, yorumlar=yorumlar)
 
-# Vercel'in uygulamayı tanıması için gerekli satır
+# Vercel uyumluluğu için
 app = app
 
 if __name__ == "__main__":
