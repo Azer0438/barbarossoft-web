@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/sitemap.xml')
 @app.route('/robots.txt')
 def static_from_root():
-    return send_from_directory(app.static_folder, request.path[1:])
+    return send_from_directory(os.path.join(app.root_path, 'static'), request.path[1:])
 
 # --- ANA SAYFA ROTASI ---
 @app.route("/", methods=["GET"])
@@ -72,3 +72,4 @@ app = app
 
 if __name__ == "__main__":
     app.run(debug=True)
+
