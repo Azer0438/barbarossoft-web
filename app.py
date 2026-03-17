@@ -67,12 +67,13 @@ def ana_sayfa():
     
     return render_template("index.html", projeler=projeler, yorumlar=yorumlar)
 
+# --- PINTEREST GİZLİLİK POLİTİKASI ROTASI ---
+@app.route('/fastlisting-privacy', methods=["GET"])
+def fastlisting_privacy():
+    return render_template("fastlisting-privacy.html")
+
 # Vercel uyumluluğu için
 app = app
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-
-
-
