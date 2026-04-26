@@ -15,6 +15,13 @@ def ana_sayfa():
     # 1. PROJELER VERİSİ
     projeler = [
         {
+            "isim": "AZR Evden Eve Nakliyat",
+            "kategori": "Nakliyat & Yerel SEO",
+            "aciklama": "Kayseri evden eve nakliyat firması için hızlı, mobil uyumlu, yerel SEO odaklı ve teklif dönüşümü güçlü kurumsal web sitesi.",
+            "link": "https://www.azrevdenevenakliyat.com.tr/",
+            "resim": "/static/azr-logo.webp"
+        },
+        {
             "isim": "Seferoğlu Nakliyat",
             "kategori": "Kurumsal Web Sitesi",
             "aciklama": "Kayseri evden eve nakliyat firması için mobil uyumlu, hızlı ve SEO altyapılı kurumsal tanıtım sitesi.",

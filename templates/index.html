@@ -216,7 +216,7 @@
                     <span class="tag">{{ proje.kategori }}</span>
                     <h3>{{ proje.isim }}</h3>
                     <p>{{ proje.aciklama }}</p>
-                    <a href="{{ proje.link }}" target="_blank" class="visit-btn">Projeyi İncele <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="{{ proje.link }}" target="_blank" rel="noopener noreferrer" title="{{ proje.isim }} projesini incele" class="visit-btn">Projeyi İncele <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             {% endfor %}
