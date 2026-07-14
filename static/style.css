@@ -318,6 +318,163 @@ nav a:not(.nav-btn):hover::after { width: 100%; }
 .review-company { color: var(--primary); font-size: 0.9rem; }
 
 /* =========================================
+   8B. PROJE DETAY SAYFASI
+   ========================================= */
+.project-detail-page {
+    background:
+        radial-gradient(circle at top right, rgba(255, 61, 0, 0.18), transparent 30%),
+        var(--bg-dark);
+}
+
+.project-detail-hero {
+    padding: 150px 0 70px;
+    background: #050505;
+}
+
+.project-detail-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1.05fr);
+    gap: 42px;
+    align-items: center;
+}
+
+.project-detail-copy h1 {
+    font-size: clamp(2.5rem, 5vw, 4.8rem);
+    line-height: 1.05;
+    margin: 22px 0;
+}
+
+.project-detail-copy p,
+.project-detail-card p {
+    color: var(--text-gray);
+    font-size: 1.04rem;
+}
+
+.back-link,
+.project-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary);
+    font-weight: 800;
+}
+
+.project-kicker {
+    margin-top: 26px;
+    padding: 8px 14px;
+    border: 1px solid rgba(255, 61, 0, 0.3);
+    border-radius: 999px;
+    background: rgba(255, 61, 0, 0.08);
+    font-size: 0.88rem;
+}
+
+.project-meta-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.project-meta-grid span,
+.project-chip-grid span {
+    display: inline-flex;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #f3f3f3;
+    font-weight: 700;
+}
+
+.project-hero-image {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: #111;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.38);
+}
+
+.project-hero-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 340px;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.project-detail-section {
+    padding: 80px 20px 20px;
+}
+
+.project-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    margin-top: 28px;
+}
+
+.project-detail-card {
+    background: rgba(20, 20, 20, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 34px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.22);
+}
+
+.project-lead-card,
+.project-result-card {
+    margin-top: 28px;
+}
+
+.project-detail-card h2 {
+    margin-top: 0;
+    color: #fff;
+    font-size: 1.7rem;
+}
+
+.project-check-list {
+    display: grid;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.project-check-list li {
+    position: relative;
+    padding-left: 28px;
+    color: #d7d7d7;
+}
+
+.project-check-list li::before {
+    content: "\f00c";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 1px;
+    color: var(--primary);
+}
+
+.project-chip-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 24px 0;
+}
+
+.project-result-card {
+    border-color: rgba(255, 61, 0, 0.28);
+    background: linear-gradient(180deg, rgba(255, 61, 0, 0.08), rgba(20, 20, 20, 0.92));
+}
+
+.project-result-card a {
+    color: var(--primary);
+    font-weight: 900;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* =========================================
    9. FORM & HESAPLAMA
    ========================================= */
 form select, form input {
@@ -445,6 +602,11 @@ footer { background: #050505; padding: 80px 0 30px; margin-top: 100px; border-to
     .process-steps { flex-direction: column; gap: 40px; }
     .step-number { right: 45%; top: -10px; }
     .comparison-grid { grid-template-columns: 1fr; }
+    .project-detail-hero { padding-top: 120px; }
+    .project-detail-hero-grid,
+    .project-detail-grid { grid-template-columns: 1fr; }
+    .project-detail-card { padding: 24px; }
+    .project-hero-image img { min-height: 240px; }
     .final-cta-section h2 { font-size: 2.5rem; }
     .final-cta-section p { font-size: 1.1rem; }
     .footer-bottom { flex-direction: column; text-align: center; gap: 10px; }

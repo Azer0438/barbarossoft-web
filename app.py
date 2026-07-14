@@ -29,11 +29,12 @@ def ana_sayfa():
             "resim": "/static/seferoglu.png"
         },
         {
-            "isim": "Doğtek Mühendislik",
-            "kategori": "Mühendislik & Proje",
-            "aciklama": "Mühendislik firması için kurumsal kimlik çalışması ve hizmet tanıtım web sitesi.",
-            "link": "https://dogtekdogalgazmuhendislik.com/", 
-            "resim": "/static/dogutek.png"
+            "isim": "Doğtek Doğalgaz ve Mühendislik",
+            "kategori": "Kurumsal Web Sitesi",
+            "aciklama": "Doğalgaz ve mühendislik hizmetleri için hazırlanan mobil uyumlu kurumsal web sitesi.",
+            "link": "/projeler/dogtek-dogalgaz-kurumsal-web-sitesi",
+            "resim": "/static/dogutek.png",
+            "internal": True
         },
         {
             "isim": "BarbarosSoft",
@@ -71,8 +72,12 @@ def ana_sayfa():
             "puan": 5
         }
     ]
-    
+
     return render_template("index.html", projeler=projeler, yorumlar=yorumlar)
+
+@app.route('/projeler/dogtek-dogalgaz-kurumsal-web-sitesi', methods=["GET"])
+def dogtek_proje_detay():
+    return render_template("project-dogtek.html")
 
 # --- PINTEREST GİZLİLİK POLİTİKASI ROTASI ---
 @app.route('/fastlisting-privacy', methods=["GET"])
