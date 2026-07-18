@@ -46,7 +46,7 @@
         <div class="logo-strip">
             {% for project in projects %}
                 <a href="{{ project.path }}" class="client-logo" aria-label="{{ project.name }} projesini incele">
-                    <img src="{{ project.image }}" alt="{{ project.name }} logo veya proje görseli" loading="lazy" width="160" height="88">
+                    <img src="{{ project.get('logo_image', project.image) }}" alt="{{ project.name }} logo veya proje görseli" loading="lazy" width="160" height="88">
                     <span>{{ project.name }}</span>
                 </a>
             {% endfor %}
@@ -137,7 +137,7 @@
             {% for project in projects %}
                 <article class="project-card">
                     <a href="{{ project.path }}" class="project-image" data-track="project_view" data-track-label="{{ project.slug }}">
-                        <img src="{{ project.image }}" alt="{{ project.name }} proje görseli" loading="lazy" width="420" height="260">
+                        <img src="{{ project.get('thumbnail', project.image) }}" alt="{{ project.name }} proje görseli" loading="lazy" width="420" height="260">
                     </a>
                     <div class="project-body">
                         <p class="project-sector">{{ project.sector }} · {{ project.location }}</p>

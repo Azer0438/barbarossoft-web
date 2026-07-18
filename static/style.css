@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
-
 :root {
     --bg: #080808;
     --bg-soft: #111111;
@@ -17,7 +15,7 @@
     --danger: #ff5f5f;
     --shadow: 0 22px 60px rgba(0, 0, 0, 0.35);
     --radius: 8px;
-    --font: 'Outfit', Arial, sans-serif;
+    --font: "Segoe UI", Arial, sans-serif;
 }
 
 * {
@@ -76,6 +74,56 @@ img {
     max-width: 100%;
     height: auto;
 }
+
+i[class^="fa-"],
+i[class*=" fa-"] {
+    display: inline-grid;
+    width: 1em;
+    min-width: 1em;
+    height: 1em;
+    place-items: center;
+    flex: 0 0 auto;
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.fa-arrow-right {
+    width: auto;
+    min-width: 0;
+}
+
+.fa-bars::before { content: "\2630"; }
+.fa-chevron-down::before { content: "\2304"; }
+.fa-whatsapp::before {
+    content: "WA";
+    font-size: 0.64em;
+    letter-spacing: 0;
+}
+.fa-calendar-check::before,
+.fa-check::before { content: "\2713"; }
+.fa-phone::before { content: "\260E"; }
+.fa-arrow-right::before { content: "\2192"; }
+.fa-paper-plane::before { content: "\2197"; }
+.fa-mobile-screen-button::before { content: "\25AF"; }
+.fa-sitemap::before { content: "\22EE"; }
+.fa-handshake-angle::before { content: "\25C7"; }
+.fa-code::before { content: "</>"; font-size: 0.66em; }
+.fa-building::before { content: "\25A6"; }
+.fa-chart-line::before,
+.fa-magnifying-glass-chart::before { content: "\2197"; }
+.fa-bullhorn::before { content: "!"; }
+.fa-map-location-dot::before,
+.fa-location-dot::before { content: "\25CF"; }
+.fa-cart-shopping::before { content: "\0024"; }
+.fa-screwdriver-wrench::before,
+.fa-gears::before { content: "\2699"; }
+.fa-layer-group::before { content: "\25A4"; }
+.fa-envelope::before { content: "@"; }
+.fa-google::before { content: "G"; }
+.fa-clock::before { content: "\25F7"; }
 
 ul,
 ol {
@@ -646,7 +694,7 @@ ol {
 }
 
 .check-list li::before {
-    content: "✓";
+    content: "\2713";
     position: absolute;
     left: 0;
     top: 0;
@@ -1270,7 +1318,7 @@ ol {
 }
 
 .floating-actions a:last-child {
-    background: #128c4a;
+    background: #075e31;
 }
 
 .cookie-banner {

@@ -63,7 +63,7 @@
         </div>
         <article class="project-card horizontal-card">
             <a href="{{ project.path }}" class="project-image" data-track="project_view" data-track-label="{{ project.slug }}">
-                <img src="{{ project.image }}" alt="{{ project.name }} proje görseli" loading="lazy" width="420" height="260">
+                <img src="{{ project.get('thumbnail', project.image) }}" alt="{{ project.name }} proje görseli" loading="lazy" width="420" height="260">
             </a>
             <div class="project-body">
                 <p><strong>İhtiyaç:</strong> {{ project.problem }}</p>

@@ -110,7 +110,7 @@
             {% for project in projects %}
                 <article class="project-card">
                     <a href="{{ project.path }}" class="project-image" data-track="project_view" data-track-label="{{ project.slug }}">
-                        <img src="{{ project.image }}" alt="{{ project.name }} proje görseli" loading="lazy" width="360" height="220">
+                        <img src="{{ project.get('thumbnail', project.image) }}" alt="{{ project.name }} proje görseli" loading="lazy" width="360" height="220">
                     </a>
                     <div class="project-body">
                         <p class="project-sector">{{ project.sector }}</p>
