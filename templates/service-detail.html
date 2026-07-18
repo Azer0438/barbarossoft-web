@@ -85,6 +85,22 @@
 </section>
 
 <section class="section">
+    <div class="container two-column">
+        <div class="section-heading align-left">
+            <p class="eyebrow">Ölçüm ve kalite</p>
+            <h2>Kullanılan kontrol noktaları.</h2>
+            <p>Her hizmette tasarım, içerik, teknik altyapı ve dönüşüm ölçümünün birlikte çalışmasına bakarız.</p>
+        </div>
+        <div class="scope-grid">
+            {% set measurement_checks = service.get("measurement", ["Self canonical ve robots meta kontrolü", "Mobil kullanılabilirlik ve hız kontrolü", "Telefon, WhatsApp ve form dönüşüm eventleri", "Sitemap, iç link ve kırık bağlantı kontrolü", "Search Console ve GA4 takip hazırlığı"]) %}
+            {% for item in measurement_checks %}
+                <span>{{ item }}</span>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section">
     <div class="container">
         <div class="section-heading">
             <p class="eyebrow">Proje örnekleri</p>
@@ -107,6 +123,27 @@
         </div>
     </div>
 </section>
+
+{% if related_posts %}
+<section class="section">
+    <div class="container">
+        <div class="section-heading">
+            <p class="eyebrow">İlgili rehberler</p>
+            <h2>Bu hizmeti destekleyen içerikler.</h2>
+        </div>
+        <div class="blog-grid">
+            {% for post in related_posts %}
+                <article class="blog-card">
+                    <p class="project-sector">{{ post.category }}</p>
+                    <h3><a href="{{ post.path }}">{{ post.title }}</a></h3>
+                    <p>{{ post.description }}</p>
+                    <a class="inline-link" href="{{ post.path }}">Oku <i class="fa-solid fa-arrow-right"></i></a>
+                </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
 
 <section class="section section-muted">
     <div class="container faq-layout">

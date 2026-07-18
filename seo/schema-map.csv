@@ -1,0 +1,14 @@
+url_pattern,page_type,schema_type,required_properties,optional_properties,source_of_truth,implemented,validation_status
+https://barbarossoft.com.tr/,Ana sayfa,ProfessionalService|WebSite|FAQPage,name|url|image|telephone|email|areaServed,sameAs|faq,SITE ve HOME_FAQ,true,valid_json_ld
+https://barbarossoft.com.tr/hizmetler,Hizmet listesi,WebPage,title|description|canonical,BreadcrumbList,Template metadata,false,manual_review_needed
+https://barbarossoft.com.tr/kayseri-web-tasarim,Hizmet,Service|FAQPage|BreadcrumbList,name|description|provider|areaServed|url,faq,SERVICES,true,valid_json_ld
+https://barbarossoft.com.tr/kurumsal-web-tasarim,Hizmet,Service|FAQPage|BreadcrumbList,name|description|provider|areaServed|url,faq,SERVICES,true,valid_json_ld
+https://barbarossoft.com.tr/kayseri-seo,Hizmet,Service|FAQPage|BreadcrumbList,name|description|provider|areaServed|url,faq,SERVICES,true,valid_json_ld
+https://barbarossoft.com.tr/yerel-seo,Hizmet,Service|FAQPage|BreadcrumbList,name|description|provider|areaServed|url,faq,SERVICES,true,valid_json_ld
+https://barbarossoft.com.tr/google-haritalar-optimizasyonu,Hizmet,Service|FAQPage|BreadcrumbList,name|description|provider|areaServed|url,faq,SERVICES,true,valid_json_ld
+https://barbarossoft.com.tr/google-ads-yonetimi,Hizmet,Service|FAQPage|BreadcrumbList,name|description|provider|areaServed|url,faq,SERVICES,true,valid_json_ld
+https://barbarossoft.com.tr/projeler,Portfolyo,CollectionPage|BreadcrumbList,name|url|description,hasPart,PROJECTS,true,valid_json_ld
+https://barbarossoft.com.tr/projeler/*,Vaka çalışması,CreativeWork|BreadcrumbList,name|description|about|image|url,publisher,PROJECTS,true,valid_json_ld
+https://barbarossoft.com.tr/blog/*,Blog,BlogPosting|BreadcrumbList,headline|description|datePublished|dateModified|author|publisher,image,BLOG_POSTS,true,valid_json_ld
+https://barbarossoft.com.tr/iletisim,İletişim,WebPage,title|description|canonical,ContactPage,Template metadata,false,manual_review_needed
+https://barbarossoft.com.tr/fastlisting-privacy,Uygulama gizlilik,Yok,noindex robots meta,,Standalone template,true,manual_review_needed

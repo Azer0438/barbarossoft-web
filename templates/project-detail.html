@@ -18,7 +18,7 @@
             <div class="hero-actions">
                 <a class="btn btn-primary" href="/iletisim" data-track="quote_request" data-track-label="{{ project.slug }}">Benzer Proje İçin Görüşelim</a>
                 {% if project.external_url %}
-                    <a class="btn btn-outline" href="{{ project.external_url }}" target="_blank" rel="noopener">Siteyi Ziyaret Et</a>
+                    <a class="btn btn-outline" href="{{ project.external_url }}" target="_blank" rel="noopener" data-track="outbound_project_click" data-track-label="{{ project.slug }}">Siteyi Ziyaret Et</a>
                 {% endif %}
             </div>
         </div>
@@ -82,13 +82,13 @@
                 <i class="fa-solid fa-code"></i>
                 <h3>Kurumsal Web Tasarım</h3>
                 <p>Mobil uyumlu, hızlı ve iletişim odaklı web sitesi yapısı.</p>
-                <a href="/kayseri-web-tasarim">İncele</a>
+                <a href="/kurumsal-web-tasarim">İncele</a>
             </article>
             <article class="mini-card">
                 <i class="fa-solid fa-magnifying-glass-chart"></i>
-                <h3>Yerel SEO</h3>
-                <p>Hizmet ve bölge sayfalarıyla arama görünürlüğü altyapısı.</p>
-                <a href="/yerel-seo">İncele</a>
+                <h3>Kayseri SEO</h3>
+                <p>Teknik SEO, içerik ve yerel görünürlük için ölçülebilir çalışma.</p>
+                <a href="/kayseri-seo">İncele</a>
             </article>
             <article class="mini-card">
                 <i class="fa-solid fa-map-location-dot"></i>

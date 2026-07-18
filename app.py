@@ -9,7 +9,7 @@ app = Flask(__name__, static_folder="static")
 TODAY = date(2026, 7, 18).isoformat()
 
 SITE = {
-    "name": "BarbarosSoft",
+    "name": "Barbarossoft",
     "domain": "https://barbarossoft.com.tr",
     "tagline": "Kayseri merkezli butik dijital büyüme ajansı",
     "location": "Kayseri merkezli, açık ofis adresi yayınlanmıyor",
@@ -44,7 +44,7 @@ SERVICES = [
         "menu_title": "Web Tasarım",
         "category": "Ana hizmet",
         "icon": "fa-code",
-        "seo_title": "Kayseri Web Tasarım | Kurumsal Web Sitesi - Barbarossoft",
+        "seo_title": "Kayseri Web Tasarım ve Kurumsal Web Sitesi | Barbarossoft",
         "description": "Kayseri'de mobil uyumlu, hızlı ve müşteri odaklı kurumsal web sitesi çözümleri. Web tasarım, teknik SEO ve dönüşüm altyapısı için Barbarossoft.",
         "summary": "Mobil uyumlu, hızlı, güven veren ve ziyaretçiyi telefon, WhatsApp veya teklif formuna yönlendiren kurumsal web siteleri.",
         "lead": "Yerel işletmeler için web sitesi yalnızca tanıtım alanı değil, müşteri talebi üreten bir merkez olmalı. Barbarossoft, Kayseri ve çevresindeki firmalar için güven veren, hızlı açılan ve dönüşüm noktaları net olan kurumsal web siteleri hazırlar.",
@@ -88,16 +88,116 @@ SERVICES = [
         ],
     },
     {
+        "slug": "kurumsal-web-tasarim",
+        "path": "/kurumsal-web-tasarim",
+        "title": "Kurumsal Web Tasarım Hizmeti",
+        "menu_title": "Kurumsal Web Tasarım",
+        "category": "Ana hizmet",
+        "icon": "fa-building",
+        "seo_title": "Kurumsal Web Tasarım ve Şirket Web Sitesi | Barbarossoft",
+        "description": "Kurumsal web tasarım hizmetiyle şirketiniz için güven veren, hızlı, mobil uyumlu ve ölçülebilir kurumsal web sitesi altyapısı hazırlayın.",
+        "summary": "Şirketinizi net anlatan, hizmetlerinizi düzenleyen, güven unsurlarını öne çıkaran ve iletişim aksiyonlarını ölçülebilir hale getiren kurumsal web sitesi.",
+        "lead": "Kurumsal web sitesi, şirketin dijitaldeki ana güven noktasıdır. Barbarossoft; hizmet, proje, hakkımızda, iletişim ve teklif akışını sade bir mimariyle birleştirerek işletmenizin doğru anlaşılmasını hedefleyen web siteleri hazırlar.",
+        "benefits": [
+            "Şirket profili, hizmetler ve projeler için düzenli bilgi mimarisi",
+            "Mobil uyumlu, hızlı ve erişilebilir sayfa yapısı",
+            "Teklif, telefon, WhatsApp ve e-posta aksiyonları için ölçüm altyapısı",
+        ],
+        "who": [
+            "Kurumsal kimliğini dijitalde daha net göstermek isteyen şirketler",
+            "Hizmetlerini ve referanslarını düzenli sunmak isteyen KOBİ'ler",
+            "Eski web sitesini daha güven veren bir yapıya taşımak isteyen firmalar",
+        ],
+        "problems": [
+            "Firma bilgileri, hizmetler ve projelerin dağınık görünmesi",
+            "Ziyaretçinin şirketi ve hizmet kapsamını hızlı anlayamaması",
+            "Teklif ve iletişim aksiyonlarının ölçülememesi",
+        ],
+        "approach": [
+            "Önce şirketin hizmetleri, hedef müşterileri ve güven unsurları çıkarılır.",
+            "Sayfa hiyerarşisi; ana sayfa, hizmetler, projeler, hakkımızda ve iletişim akışına göre planlanır.",
+            "Yayına alınmadan önce mobil, hız, temel SEO, schema ve dönüşüm kontrolleri yapılır.",
+        ],
+        "scope": [
+            "Kurumsal ana sayfa ve alt sayfa kurgusu",
+            "Hizmet, proje ve hakkımızda sayfaları",
+            "Mobil uyum ve erişilebilirlik kontrolleri",
+            "Temel teknik SEO ve structured data",
+            "Analytics, Search Console ve dönüşüm hazırlığı",
+        ],
+        "process": ["Kurumsal keşif", "Bilgi mimarisi", "Tasarım ve geliştirme", "SEO ve ölçüm kontrolleri", "Yayın ve bakım planı"],
+        "faq": [
+            {
+                "question": "Kurumsal web sitesi ile web tasarım hizmeti arasında fark var mı?",
+                "answer": "Kurumsal web sitesi, şirketin hizmetlerini, güven unsurlarını, projelerini ve iletişim akışını daha bütünlüklü ele alır. Web tasarım hizmeti ise daha geniş bir çatı olarak landing page, hizmet sayfası ve dönüşüm odaklı sayfa çalışmalarını da kapsayabilir.",
+            },
+            {
+                "question": "Kurumsal web sitesi yayına alındıktan sonra destek veriliyor mu?",
+                "answer": "Evet. Yayın sonrası küçük içerik güncellemeleri, teknik kontroller, bakım ve geliştirme ihtiyaçları ayrı kapsamla planlanabilir.",
+            },
+        ],
+    },
+    {
+        "slug": "kayseri-seo",
+        "path": "/kayseri-seo",
+        "title": "Kayseri SEO Hizmeti",
+        "menu_title": "Kayseri SEO",
+        "category": "Ana hizmet",
+        "icon": "fa-chart-line",
+        "seo_title": "Kayseri SEO Hizmeti ve SEO Danışmanlığı | Barbarossoft",
+        "description": "Kayseri SEO hizmetiyle teknik SEO, içerik planı, Search Console takibi, yerel görünürlük ve dönüşüm ölçümünü profesyonel bir yol haritasında birleştirin.",
+        "summary": "Kayseri'deki işletmeler için teknik SEO, içerik stratejisi, yerel arama görünürlüğü, Search Console takibi ve dönüşüm ölçümünü birlikte ele alan çalışma.",
+        "lead": "Kayseri SEO çalışmasında amaç, yalnızca birkaç kelimeyi metne eklemek değildir. Barbarossoft; teknik sağlık, arama niyeti, içerik mimarisi, yerel sinyaller, iç linkleme ve dönüşüm ölçümünü birlikte ele alarak sürdürülebilir bir SEO planı kurar.",
+        "benefits": [
+            "Teknik SEO ve Search Console temelli sorun takibi",
+            "Kayseri odaklı hizmet sayfaları ve içerik planı",
+            "Organik WhatsApp, telefon ve form dönüşümleri için ölçüm yaklaşımı",
+        ],
+        "who": [
+            "Kayseri'de organik aramalardan daha nitelikli talep almak isteyen işletmeler",
+            "Mevcut sitesinde teknik SEO ve içerik eksikleri bulunan firmalar",
+            "SEO sürecini raporlanabilir ve dürüst bir planla yürütmek isteyen KOBİ'ler",
+        ],
+        "problems": [
+            "Sayfaların doğru arama niyetiyle eşleşmemesi",
+            "Canonical, sitemap, hız, içerik ve iç linkleme sorunlarının birlikte takip edilmemesi",
+            "SEO çalışmasının dönüşüm hedefleriyle ilişkilendirilmemesi",
+        ],
+        "approach": [
+            "Mevcut URL, index, metadata, schema, hız ve Search Console durumu denetlenir.",
+            "Her önemli sayfa için birincil niyet ve destekleyen içerikler ayrıştırılır.",
+            "Aylık iyileştirme planı; teknik görevler, içerik güncellemeleri ve ölçüm kontrolleriyle yürütülür.",
+        ],
+        "scope": [
+            "Teknik SEO audit ve önceliklendirme",
+            "Anahtar kelime ve arama niyeti haritası",
+            "On-page SEO ve iç linkleme",
+            "Local SEO ve Google İşletme Profili uyumu",
+            "Search Console ve GA4 organik dönüşüm takibi",
+        ],
+        "process": ["SEO envanteri", "Niyet ve URL haritası", "Teknik düzeltmeler", "İçerik ve iç linkleme", "Raporlama ve iyileştirme"],
+        "faq": [
+            {
+                "question": "Kayseri SEO çalışması sıralama garantisi verir mi?",
+                "answer": "Hayır. SEO; rekabet, site geçmişi, içerik kalitesi, teknik durum ve Google algoritmalarına bağlıdır. Bu nedenle kesin sıra garantisi verilmez; ölçülebilir, düzenli ve şeffaf iyileştirme planı sunulur.",
+            },
+            {
+                "question": "Kayseri SEO ile yerel SEO aynı şey mi?",
+                "answer": "Kayseri SEO, Kayseri pazarında ticari SEO danışmanlığı ve uygulama hizmetine odaklanır. Yerel SEO ise bölgesel arama sinyalleri, hizmet alanı, Google İşletme Profili ve local görünürlük mantığını daha kavramsal ele alır.",
+            },
+        ],
+    },
+    {
         "slug": "yerel-seo",
         "path": "/yerel-seo",
         "title": "Yerel SEO Hizmeti",
         "menu_title": "Yerel SEO",
         "category": "Ana hizmet",
         "icon": "fa-magnifying-glass-chart",
-        "seo_title": "Yerel SEO Hizmeti | Google'da Bölgesel Görünürlük",
-        "description": "İşletmenizin hizmet verdiği şehir ve ilçelerde Google'da daha görünür olması için yerel SEO, içerik ve teknik optimizasyon hizmeti.",
-        "summary": "İşletmenizin hizmet verdiği bölgelerde Google aramalarında daha görünür olması için teknik ve içerik odaklı çalışmalar.",
-        "lead": "Yerel SEO, işletmenizin bulunduğu veya hizmet verdiği bölgelerde doğru aramalarda görünür olmasını hedefler. Sayfa yapısı, içerik planı, teknik kontroller ve Google İşletme Profili uyumu birlikte ele alınır.",
+        "seo_title": "Yerel SEO Hizmeti | Bölgesel Google Görünürlüğü",
+        "description": "Yerel SEO hizmetiyle bölgesel arama görünürlüğünüzü; alaka düzeyi, mesafe, bilinirlik, web sitesi ve Google İşletme Profili uyumuyla güçlendirin.",
+        "summary": "Bölgesel aramalarda doğru anlaşılmak için web sitesi, yerel sinyaller, Google İşletme Profili ve içerik düzenini birlikte ele alan çalışma.",
+        "lead": "Yerel SEO, işletmenizin bulunduğu veya hizmet verdiği bölgelerde doğru aramalarda anlaşılır olmasını hedefler. Alaka düzeyi, mesafe ve bilinirlik sinyalleri; web sitesi içeriği ve Google İşletme Profili uyumuyla birlikte değerlendirilir.",
         "benefits": [
             "Hizmet ve bölge sayfalarının doğru kurgulanması",
             "Search Console ve teknik SEO kontrolleri",
@@ -192,12 +292,12 @@ SERVICES = [
         "path": "/google-haritalar-optimizasyonu",
         "title": "Google Haritalar Optimizasyonu",
         "menu_title": "Google Haritalar Optimizasyonu",
-        "category": "İkincil hizmet",
+        "category": "Ana hizmet",
         "icon": "fa-map-location-dot",
-        "seo_title": "Google Haritalar Optimizasyonu | Barbarossoft",
-        "description": "Google İşletme Profilinizi doğru kategori, hizmet, içerik ve web sitesi uyumuyla güçlendirin. Kayseri yerel görünürlük danışmanlığı.",
-        "summary": "Google İşletme Profilinizi kategori, hizmet, fotoğraf, web sitesi uyumu ve doğru bilgi düzeniyle güçlendiren çalışma.",
-        "lead": "Google Haritalar görünürlüğü, özellikle yerel hizmet işletmeleri için telefon ve yol tarifi taleplerinin önemli kaynaklarından biridir. Profil bilgileri, hizmet alanları ve web sitesi uyumu doğru kurulduğunda kullanıcıların sizi anlaması kolaylaşır.",
+        "seo_title": "Google Haritalar Optimizasyonu ve İşletme Profili Yönetimi",
+        "description": "Google Haritalar optimizasyonu ve İşletme Profili yönetimiyle kategori, hizmet, çalışma saati, fotoğraf, yorum süreci ve web sitesi uyumunu düzenleyin.",
+        "summary": "Google İşletme Profilinizi kategori, hizmet, çalışma saati, fotoğraf, yorum, soru-cevap ve web sitesi uyumuyla güçlendiren çalışma.",
+        "lead": "Google Haritalar görünürlüğü, özellikle yerel hizmet işletmeleri için telefon ve yol tarifi taleplerinin önemli kaynaklarından biridir. Profil kategorileri, hizmetler, çalışma saatleri, fotoğraflar, yorum yanıtları, soru-cevap alanı ve web sitesi uyumu birlikte düzenlendiğinde kullanıcıların sizi anlaması kolaylaşır.",
         "benefits": [
             "Kategori, hizmet alanı ve profil bilgisi düzeni",
             "Fotoğraf, hizmet ve açıklama içeriklerinin planlanması",
@@ -339,7 +439,14 @@ SERVICES = [
     },
 ]
 
-MAIN_SERVICE_SLUGS = {"kayseri-web-tasarim", "yerel-seo", "google-ads-yonetimi"}
+MAIN_SERVICE_SLUGS = {
+    "kayseri-web-tasarim",
+    "kurumsal-web-tasarim",
+    "kayseri-seo",
+    "yerel-seo",
+    "google-haritalar-optimizasyonu",
+    "google-ads-yonetimi",
+}
 MAIN_SERVICES = [service for service in SERVICES if service["slug"] in MAIN_SERVICE_SLUGS]
 SECONDARY_SERVICES = [
     next(service for service in SERVICES if service["slug"] == "e-ticaret-sitesi"),
@@ -989,7 +1096,9 @@ def inject_globals():
 @app.route("/sitemap.xml")
 @app.route("/robots.txt")
 def static_from_root():
-    return send_from_directory(app.static_folder, request.path.lstrip("/"))
+    filename = request.path.lstrip("/")
+    mimetype = "application/xml" if filename == "sitemap.xml" else "text/plain"
+    return send_from_directory(app.static_folder, filename, mimetype=mimetype)
 
 
 @app.route("/")
@@ -1004,7 +1113,7 @@ def index():
             "telephone": SITE["phone_display"],
             "email": SITE["email"],
             "areaServed": ["Kayseri", "Türkiye"],
-            "description": "Kayseri ve çevresindeki işletmeler için web tasarım, yerel SEO, Google Haritalar ve Google Ads çözümleri sunan butik dijital ajans.",
+            "description": "Kayseri ve Türkiye genelindeki işletmeler için web tasarım, SEO, Google Haritalar ve Google Ads çözümleri sunan butik dijital ajans.",
             "sameAs": [SITE["instagram"]],
         },
         {
@@ -1017,8 +1126,8 @@ def index():
     ]
     return render_template(
         "index.html",
-        title="Barbarossoft | Kayseri Web Tasarım, Yerel SEO ve Google Ads",
-        description="Kayseri ve çevresindeki işletmeler için dönüşüm odaklı web tasarım, yerel SEO, Google Haritalar ve Google Ads çözümleri.",
+        title="Barbarossoft | Kayseri Web Tasarım, SEO ve Google Ads",
+        description="Barbarossoft; Kayseri merkezli butik dijital ajans olarak web tasarım, SEO, Google Haritalar ve Google Ads çözümlerini dönüşüm hedefiyle planlar.",
         canonical=site_url("/"),
         main_services=MAIN_SERVICES,
         secondary_services=SECONDARY_SERVICES,
@@ -1036,9 +1145,56 @@ def services_index():
     return render_template(
         "services.html",
         title="Hizmetler | Barbarossoft",
-        description="Web tasarım, yerel SEO, Google Haritalar, Google Ads, e-ticaret ve web sitesi bakım hizmetlerini inceleyin.",
+        description="Web tasarım, kurumsal web sitesi, Kayseri SEO, yerel SEO, Google Haritalar, Google Ads, e-ticaret ve bakım hizmetlerini inceleyin.",
         canonical=site_url("/hizmetler"),
     )
+
+
+def related_posts_for(slug):
+    mapping = {
+        "kayseri-web-tasarim": [
+            "kayseride-web-sitesi-yaptirirken-nelere-dikkat-edilmeli",
+            "kurumsal-web-sitesinde-mutlaka-bulunmasi-gereken-bolumler",
+            "web-sitesinden-gelen-whatsapp-talepleri-nasil-olculur",
+        ],
+        "kurumsal-web-tasarim": [
+            "kurumsal-web-sitesinde-mutlaka-bulunmasi-gereken-bolumler",
+            "kayseride-web-sitesi-yaptirirken-nelere-dikkat-edilmeli",
+            "web-sitesinden-gelen-whatsapp-talepleri-nasil-olculur",
+        ],
+        "kayseri-seo": [
+            "yerel-seo-nedir-ve-hangi-isletmeler-icin-gereklidir",
+            "google-haritalarda-isletme-siralamasi-nasil-guclendirilir",
+            "kurumsal-web-sitesinde-mutlaka-bulunmasi-gereken-bolumler",
+        ],
+        "yerel-seo": [
+            "yerel-seo-nedir-ve-hangi-isletmeler-icin-gereklidir",
+            "google-haritalarda-isletme-siralamasi-nasil-guclendirilir",
+            "kayseride-web-sitesi-yaptirirken-nelere-dikkat-edilmeli",
+        ],
+        "google-haritalar-optimizasyonu": [
+            "google-haritalarda-isletme-siralamasi-nasil-guclendirilir",
+            "yerel-seo-nedir-ve-hangi-isletmeler-icin-gereklidir",
+            "web-sitesinden-gelen-whatsapp-talepleri-nasil-olculur",
+        ],
+        "google-ads-yonetimi": [
+            "google-ads-reklamlari-neden-gorunmeyebilir",
+            "web-sitesinden-gelen-whatsapp-talepleri-nasil-olculur",
+            "kayseride-web-sitesi-yaptirirken-nelere-dikkat-edilmeli",
+        ],
+        "e-ticaret-sitesi": [
+            "kurumsal-web-sitesinde-mutlaka-bulunmasi-gereken-bolumler",
+            "web-sitesinden-gelen-whatsapp-talepleri-nasil-olculur",
+            "google-ads-reklamlari-neden-gorunmeyebilir",
+        ],
+        "web-sitesi-bakim-hizmeti": [
+            "kurumsal-web-sitesinde-mutlaka-bulunmasi-gereken-bolumler",
+            "kayseride-web-sitesi-yaptirirken-nelere-dikkat-edilmeli",
+            "web-sitesinden-gelen-whatsapp-talepleri-nasil-olculur",
+        ],
+    }
+    slugs = mapping.get(slug, [])
+    return [post for post in BLOG_POSTS if post["slug"] in slugs]
 
 
 def render_service_page(service):
@@ -1051,6 +1207,7 @@ def render_service_page(service):
             "provider": {"@type": "Organization", "name": SITE["name"], "url": SITE["domain"]},
             "areaServed": ["Kayseri", "Türkiye"],
             "url": site_url(service["path"]),
+            "mainEntityOfPage": site_url(service["path"]),
         },
         faq_schema(service["faq"]),
         breadcrumb_schema(
@@ -1068,6 +1225,7 @@ def render_service_page(service):
         canonical=site_url(service["path"]),
         service=service,
         projects=PROJECTS,
+        related_posts=related_posts_for(service["slug"]),
         schema=schema,
     )
 
@@ -1083,6 +1241,13 @@ for item in SERVICES:
 @app.route("/projeler")
 def projects_index():
     schema = [
+        {
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": "Barbarossoft Projeler",
+            "url": site_url("/projeler"),
+            "description": "Barbarossoft tarafından hazırlanan web tasarım ve dijital altyapı projeleri.",
+        },
         breadcrumb_schema(
             [
                 {"name": "Ana Sayfa", "path": "/"},
@@ -1106,6 +1271,16 @@ def project_detail(slug):
     if not project:
         abort(404)
     schema = [
+        {
+            "@context": "https://schema.org",
+            "@type": "CreativeWork",
+            "name": f"{project['name']} Projesi",
+            "description": project["summary"],
+            "about": project["sector"],
+            "image": site_url(project["image"]),
+            "url": site_url(project["path"]),
+            "publisher": {"@type": "Organization", "name": SITE["name"], "url": SITE["domain"]},
+        },
         breadcrumb_schema(
             [
                 {"name": "Ana Sayfa", "path": "/"},
@@ -1119,6 +1294,8 @@ def project_detail(slug):
         title=f"{project['name']} Projesi | Barbarossoft",
         description=project["summary"],
         canonical=site_url(project["path"]),
+        og_type="article",
+        og_image=project["image"],
         project=project,
         schema=schema,
     )
@@ -1226,7 +1403,7 @@ def blog_detail(slug):
     schema = [
         {
             "@context": "https://schema.org",
-            "@type": "Article",
+            "@type": "BlogPosting",
             "headline": post["title"],
             "description": post["description"],
             "datePublished": post["date"],
@@ -1248,6 +1425,7 @@ def blog_detail(slug):
         title=f"{post['title']} | Barbarossoft",
         description=post["description"],
         canonical=site_url(post["path"]),
+        og_type="article",
         post=post,
         related_posts=related,
         schema=schema,
@@ -1269,6 +1447,7 @@ def render_industry_page(page):
         title=f"{page['title']} | Barbarossoft",
         description=page["description"],
         canonical=site_url(page["path"]),
+        og_type="article",
         page=page,
         project=project,
         schema=schema,
@@ -1306,6 +1485,17 @@ def fastlisting_privacy():
     return render_template("fastlisting-privacy.html")
 
 
+@app.route("/kurumsal-web-sitesi")
+def legacy_kurumsal_web_sitesi():
+    return redirect("/kurumsal-web-tasarim", code=301)
+
+
+@app.route("/seo-hizmeti")
+@app.route("/kayseri-seo-danismanligi")
+def legacy_kayseri_seo():
+    return redirect("/kayseri-seo", code=301)
+
+
 @app.route("/services")
 def legacy_services():
     return redirect("/hizmetler", code=301)
@@ -1334,6 +1524,7 @@ def not_found(error):
             title="Sayfa Bulunamadı | Barbarossoft",
             description="Aradığınız sayfa bulunamadı. Barbarossoft hizmetlerini ve projelerini inceleyebilirsiniz.",
             canonical=site_url(request.path),
+            robots="noindex, follow",
         ),
         404,
     )

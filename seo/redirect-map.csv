@@ -1,0 +1,8 @@
+old_url,new_url,redirect_type,reason,implemented,tested
+https://barbarossoft.com.tr/services,https://barbarossoft.com.tr/hizmetler,301,Eski İngilizce hizmetler URL'si,true,true
+https://barbarossoft.com.tr/projects,https://barbarossoft.com.tr/projeler,301,Eski İngilizce projeler URL'si,true,true
+https://barbarossoft.com.tr/about,https://barbarossoft.com.tr/hakkimizda,301,Eski İngilizce hakkımızda URL'si,true,true
+https://barbarossoft.com.tr/contact,https://barbarossoft.com.tr/iletisim,301,Eski İngilizce iletişim URL'si,true,true
+https://barbarossoft.com.tr/kurumsal-web-sitesi,https://barbarossoft.com.tr/kurumsal-web-tasarim,301,Kurumsal web tasarım için tercih edilen yeni URL,true,true
+https://barbarossoft.com.tr/seo-hizmeti,https://barbarossoft.com.tr/kayseri-seo,301,Kayseri SEO ticari niyeti için tercih edilen URL,true,true
+https://barbarossoft.com.tr/kayseri-seo-danismanligi,https://barbarossoft.com.tr/kayseri-seo,301,Kayseri SEO danışmanlığı varyantı için tercih edilen URL,true,true

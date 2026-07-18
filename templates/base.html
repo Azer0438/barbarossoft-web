@@ -6,17 +6,23 @@
     <title>{{ title or site.name }}</title>
     <meta name="description" content="{{ description or site.tagline }}">
     <meta name="author" content="{{ site.name }}">
+    <meta name="robots" content="{{ robots or 'index, follow' }}">
     <link rel="canonical" href="{{ canonical or site.domain }}">
+    {% set page_og_image = og_image or site.image %}
+    {% set absolute_og_image = page_og_image if page_og_image[:4] == 'http' else site.domain ~ page_og_image %}
 
     <meta property="og:title" content="{{ title or site.name }}">
     <meta property="og:description" content="{{ description or site.tagline }}">
-    <meta property="og:image" content="{{ site.domain }}{{ site.image }}">
+    <meta property="og:image" content="{{ absolute_og_image }}">
     <meta property="og:url" content="{{ canonical or site.domain }}">
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="{{ og_type or 'website' }}">
+    <meta property="og:site_name" content="{{ site.name }}">
+    <meta property="og:locale" content="tr_TR">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ title or site.name }}">
     <meta name="twitter:description" content="{{ description or site.tagline }}">
-    <meta name="twitter:image" content="{{ site.domain }}{{ site.image }}">
+    <meta name="twitter:image" content="{{ absolute_og_image }}">
+    <meta name="twitter:url" content="{{ canonical or site.domain }}">
 
     <link rel="icon" href="{{ url_for('static', filename='social-share.png') }}" type="image/png">
     <link rel="preload" href="{{ url_for('static', filename='social-share.png') }}" as="image">
@@ -27,6 +33,12 @@
       window.BARBAROSSOFT_GA_ID = 'G-N0C5JP85VR';
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied'
+      });
     </script>
 
     {% if schema %}
@@ -187,6 +199,12 @@
         function loadAnalytics() {
             if (gaLoaded || !hasAnalyticsConsent()) return;
             gaLoaded = true;
+            window.gtag('consent', 'update', {
+                ad_storage: 'denied',
+                ad_user_data: 'denied',
+                ad_personalization: 'denied',
+                analytics_storage: 'granted'
+            });
             var script = document.createElement('script');
             script.async = true;
             script.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.BARBAROSSOFT_GA_ID;
@@ -225,6 +243,12 @@
             if (reject) {
                 reject.addEventListener('click', function () {
                     setConsent('rejected');
+                    window.gtag('consent', 'update', {
+                        ad_storage: 'denied',
+                        ad_user_data: 'denied',
+                        ad_personalization: 'denied',
+                        analytics_storage: 'denied'
+                    });
                     if (banner) banner.hidden = true;
                 });
             }
