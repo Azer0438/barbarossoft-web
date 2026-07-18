@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-hero">
+    <div class="container narrow">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Ana Sayfa</a>
+            <span>/</span>
+            <span>{{ page.title }}</span>
+        </nav>
+        <p class="eyebrow">{{ page.sector }}</p>
+        <h1>{{ page.title }}</h1>
+        <p>{{ page.intro }}</p>
+        <div class="hero-actions">
+            <a class="btn btn-primary" href="/iletisim" data-track="quote_request" data-track-label="{{ page.slug }}">Teklif Al</a>
+            <a class="btn btn-outline" href="{{ whatsapp_url() }}" target="_blank" rel="noopener" data-track="whatsapp_click" data-track-label="{{ page.slug }}">WhatsApp'tan Yaz</a>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container two-column">
+        <div>
+            <p class="eyebrow">Müşteri kazanma modeli</p>
+            <h2>{{ page.sector }} firmaları için dijital akış.</h2>
+            <p>Bu sektörde web sitesi, yerel SEO ve reklam çalışması aynı iletişim hedeflerine bağlanmalıdır: doğru hizmeti anlatmak, güven oluşturmak ve hızlı teklif talebi almak.</p>
+        </div>
+        <div class="why-list">
+            {% for item in page.needs %}
+                <div class="why-item">
+                    <i class="fa-solid fa-check"></i>
+                    <p>{{ item }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section section-muted">
+    <div class="container three-blocks">
+        <article>
+            <h2>Önemli hizmet sayfaları</h2>
+            <p>Hizmetler ayrı sayfalarda anlatıldığında hem kullanıcı hem arama motoru için daha anlaşılır bir yapı oluşur.</p>
+        </article>
+        <article>
+            <h2>Yerel SEO ihtiyacı</h2>
+            <p>Şehir, ilçe ve hizmet odaklı aramalarda görünür olmak için içerik ve teknik yapı birlikte planlanmalıdır.</p>
+        </article>
+        <article>
+            <h2>Google Ads senaryosu</h2>
+            <p>Reklamlar, doğrudan teklif veya iletişim almaya uygun açılış sayfalarına yönlendirilmelidir.</p>
+        </article>
+    </div>
+</section>
+
+{% if project %}
+<section class="section">
+    <div class="container">
+        <div class="section-heading">
+            <p class="eyebrow">Örnek proje</p>
+            <h2>{{ project.name }}</h2>
+            <p>{{ project.summary }}</p>
+        </div>
+        <article class="project-card horizontal-card">
+            <a href="{{ project.path }}" class="project-image" data-track="project_view" data-track-label="{{ project.slug }}">
+                <img src="{{ project.image }}" alt="{{ project.name }} proje görseli" loading="lazy" width="420" height="260">
+            </a>
+            <div class="project-body">
+                <p><strong>İhtiyaç:</strong> {{ project.problem }}</p>
+                <p><strong>Çözüm:</strong> {{ project.solution }}</p>
+                <a class="inline-link" href="{{ project.path }}">Projeyi İncele <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </article>
+    </div>
+</section>
+{% endif %}
+
+<section class="section final-cta">
+    <div class="container cta-panel">
+        <h2>{{ page.sector }} firmanız için uygulanabilir bir plan çıkaralım.</h2>
+        <p>Web sitesi, yerel SEO, Haritalar ve reklam ihtiyaçlarını aynı görüşmede netleştirelim.</p>
+        <a class="btn btn-primary" href="/iletisim" data-track="quote_request" data-track-label="{{ page.slug }}_bottom">Ücretsiz Ön Görüşme</a>
+    </div>
+</section>
+{% endblock %}

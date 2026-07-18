@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-hero">
+    <div class="container narrow">
+        <p class="eyebrow">Blog</p>
+        <h1>Yerel işletmeler için web tasarım, SEO, Haritalar ve reklam notları.</h1>
+        <p>Teknik konuları işletme sahibinin karar almasını kolaylaştıracak sade bir dille anlatıyoruz.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container blog-grid">
+        {% for post in posts %}
+            <article class="blog-card">
+                <p class="project-sector">{{ post.category }} · {{ post.reading_time }}</p>
+                <h2><a href="{{ post.path }}">{{ post.title }}</a></h2>
+                <p>{{ post.description }}</p>
+                <a class="inline-link" href="{{ post.path }}">Yazıyı Oku <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,82 @@
+<form class="quote-form" action="/teklif" method="post" data-quote-form novalidate>
+    {% if success %}
+        <div class="form-alert success">
+            <p>{{ success }}</p>
+            {% if success_link %}
+                <a class="inline-link" href="{{ success_link }}" target="_blank" rel="noopener">WhatsApp'ta Aç <i class="fa-solid fa-arrow-right"></i></a>
+            {% endif %}
+        </div>
+    {% endif %}
+    {% if errors %}
+        <div class="form-alert error">
+            <p>Lütfen işaretli alanları kontrol edin.</p>
+        </div>
+    {% endif %}
+    <div class="form-alert success" data-js-success hidden>
+        <p>Talebiniz hazırlandı. WhatsApp üzerinden hızlıca gönderebilirsiniz.</p>
+        <a class="inline-link" href="#" target="_blank" rel="noopener">WhatsApp'ta Aç <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <input type="text" name="website_url" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <div class="form-grid">
+        <label>
+            <span>Ad Soyad</span>
+            <input type="text" name="name" value="{{ form.get('name', '') }}" required autocomplete="name">
+            {% if errors.get('name') %}<small>{{ errors.get('name') }}</small>{% endif %}
+        </label>
+        <label>
+            <span>Firma Adı</span>
+            <input type="text" name="company" value="{{ form.get('company', '') }}" required autocomplete="organization">
+            {% if errors.get('company') %}<small>{{ errors.get('company') }}</small>{% endif %}
+        </label>
+        <label>
+            <span>Telefon</span>
+            <input type="tel" name="phone" value="{{ form.get('phone', '') }}" required autocomplete="tel">
+            {% if errors.get('phone') %}<small>{{ errors.get('phone') }}</small>{% endif %}
+        </label>
+        <label>
+            <span>E-posta</span>
+            <input type="email" name="email" value="{{ form.get('email', '') }}" required autocomplete="email">
+            {% if errors.get('email') %}<small>{{ errors.get('email') }}</small>{% endif %}
+        </label>
+        <label>
+            <span>İhtiyaç Duyulan Hizmet</span>
+            <select name="service" required>
+                <option value="">Seçiniz</option>
+                {% for service in services %}
+                    <option value="{{ service.menu_title }}" {% if form.get('service') == service.menu_title %}selected{% endif %}>{{ service.menu_title }}</option>
+                {% endfor %}
+                <option value="Özel Yazılım / Otomasyon" {% if form.get('service') == 'Özel Yazılım / Otomasyon' %}selected{% endif %}>Özel Yazılım / Otomasyon</option>
+            </select>
+            {% if errors.get('service') %}<small>{{ errors.get('service') }}</small>{% endif %}
+        </label>
+        <label>
+            <span>Mevcut Web Sitesi</span>
+            <input type="url" name="website" value="{{ form.get('website', '') }}" placeholder="https://">
+        </label>
+        <label>
+            <span>Tahmini Bütçe Aralığı</span>
+            <select name="budget">
+                <option value="">Henüz net değil</option>
+                <option value="Başlangıç kapsamı" {% if form.get('budget') == 'Başlangıç kapsamı' %}selected{% endif %}>Başlangıç kapsamı</option>
+                <option value="Orta kapsam" {% if form.get('budget') == 'Orta kapsam' %}selected{% endif %}>Orta kapsam</option>
+                <option value="Kapsamlı çalışma" {% if form.get('budget') == 'Kapsamlı çalışma' %}selected{% endif %}>Kapsamlı çalışma</option>
+            </select>
+        </label>
+        <label class="full">
+            <span>Kısa Proje Açıklaması</span>
+            <textarea name="description" rows="5" required>{{ form.get('description', '') }}</textarea>
+            {% if errors.get('description') %}<small>{{ errors.get('description') }}</small>{% endif %}
+        </label>
+    </div>
+    <label class="consent">
+        <input type="checkbox" name="consent" required {% if form.get('consent') == 'on' %}checked{% endif %}>
+        <span>İletişim ve teklif süreci için paylaştığım bilgilerin işlenmesine onay veriyorum.</span>
+    </label>
+    {% if errors.get('consent') %}<small class="field-note">{{ errors.get('consent') }}</small>{% endif %}
+    <button class="btn btn-primary form-submit" type="submit" data-track-label="quote_form">
+        <i class="fa-regular fa-paper-plane"></i>
+        Teklif Talebi Gönder
+    </button>
+</form>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title or site.name }}</title>
+    <meta name="description" content="{{ description or site.tagline }}">
+    <meta name="author" content="{{ site.name }}">
+    <link rel="canonical" href="{{ canonical or site.domain }}">
+
+    <meta property="og:title" content="{{ title or site.name }}">
+    <meta property="og:description" content="{{ description or site.tagline }}">
+    <meta property="og:image" content="{{ site.domain }}{{ site.image }}">
+    <meta property="og:url" content="{{ canonical or site.domain }}">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ title or site.name }}">
+    <meta name="twitter:description" content="{{ description or site.tagline }}">
+    <meta name="twitter:image" content="{{ site.domain }}{{ site.image }}">
+
+    <link rel="icon" href="{{ url_for('static', filename='social-share.png') }}" type="image/png">
+    <link rel="preload" href="{{ url_for('static', filename='social-share.png') }}" as="image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <script>
+      window.BARBAROSSOFT_GA_ID = 'G-N0C5JP85VR';
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+    </script>
+
+    {% if schema %}
+        {% for item in schema %}
+            <script type="application/ld+json">{{ item|tojson }}</script>
+        {% endfor %}
+    {% endif %}
+</head>
+<body>
+    <a class="skip-link" href="#icerik">İçeriğe geç</a>
+
+    <header class="site-header" data-site-header>
+        <div class="header-inner">
+            <a class="brand" href="/" aria-label="Barbarossoft ana sayfa">
+                <img src="{{ url_for('static', filename='social-share.png') }}" alt="" width="38" height="38">
+                <span>Barbaros<span>soft</span></span>
+            </a>
+
+            <button class="mobile-toggle" type="button" aria-controls="main-nav" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+                <span class="sr-only">Menüyü aç</span>
+            </button>
+
+            <nav class="site-nav" id="main-nav" aria-label="Ana menü">
+                <a href="/" class="nav-link">Ana Sayfa</a>
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-toggle" type="button" aria-expanded="false">
+                        Hizmetler
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        {% for service in services %}
+                            <a href="{{ service.path }}">{{ service.menu_title }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <a href="/projeler" class="nav-link">Projeler</a>
+                <a href="/hakkimizda" class="nav-link">Hakkımızda</a>
+                <a href="/blog" class="nav-link">Blog</a>
+                <a href="/iletisim" class="nav-link">İletişim</a>
+                <div class="header-actions">
+                    <a class="btn btn-outline" href="{{ whatsapp_url() }}" target="_blank" rel="noopener" data-track="whatsapp_click" data-track-label="header">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        WhatsApp
+                    </a>
+                    <a class="btn btn-primary" href="/iletisim" data-track="quote_request" data-track-label="header">
+                        <i class="fa-regular fa-calendar-check"></i>
+                        Ücretsiz Ön Görüşme
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="icerik">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a class="brand" href="/">
+                    <img src="{{ url_for('static', filename='social-share.png') }}" alt="" width="38" height="38">
+                    <span>Barbaros<span>soft</span></span>
+                </a>
+                <p>Kayseri ve çevresindeki yerel işletmeler için web tasarım, yerel SEO, Google Haritalar ve Google Ads altyapısı kuran butik dijital ajans.</p>
+            </div>
+            <div>
+                <h2>Hizmetler</h2>
+                <ul class="footer-links">
+                    {% for service in services[:6] %}
+                        <li><a href="{{ service.path }}">{{ service.menu_title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div>
+                <h2>Hızlı Linkler</h2>
+                <ul class="footer-links">
+                    <li><a href="/projeler">Projeler</a></li>
+                    <li><a href="/hakkimizda">Hakkımızda</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/iletisim">İletişim</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2>İletişim</h2>
+                <ul class="footer-links">
+                    <li><a href="tel:{{ site.phone_raw }}" data-track="phone_click" data-track-label="footer">{{ site.phone_display }}</a></li>
+                    <li><a href="{{ whatsapp_url() }}" target="_blank" rel="noopener" data-track="whatsapp_click" data-track-label="footer">WhatsApp'tan Yaz</a></li>
+                    <li><a href="mailto:{{ site.email }}" data-track="email_click" data-track-label="footer">{{ site.email }}</a></li>
+                    <li>{{ site.location }}</li>
+                    <li><a href="{{ site.business_profile }}" target="_blank" rel="noopener">Google İşletme Profili</a></li>
+                    <li>{{ site.hours }}</li>
+                    <li><a href="{{ site.instagram }}" target="_blank" rel="noopener">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>© {{ current_year }} Barbarossoft. Tüm hakları saklıdır.</p>
+            <div class="legal-links">
+                {% for page in legal_pages %}
+                    <a href="{{ page.path }}">{{ page.title }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </footer>
+
+    <div class="floating-actions" aria-label="Hızlı iletişim">
+        <a href="tel:{{ site.phone_raw }}" data-track="phone_click" data-track-label="floating">
+            <i class="fa-solid fa-phone"></i>
+            <span>Ara</span>
+        </a>
+        <a href="{{ whatsapp_url() }}" target="_blank" rel="noopener" data-track="whatsapp_click" data-track-label="floating">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>WhatsApp</span>
+        </a>
+    </div>
+
+    <div class="cookie-banner" data-cookie-banner hidden>
+        <div>
+            <strong>Çerez tercihi</strong>
+            <p>Analitik çerezleri yalnızca site performansını ve dönüşüm tıklamalarını ölçmek için kullanıyoruz.</p>
+        </div>
+        <div class="cookie-actions">
+            <button class="btn btn-muted" type="button" data-cookie-reject>Reddet</button>
+            <button class="btn btn-primary" type="button" data-cookie-accept>Kabul Et</button>
+        </div>
+    </div>
+
+    <script>
+    (function () {
+        var body = document.body;
+        var nav = document.getElementById('main-nav');
+        var toggle = document.querySelector('.mobile-toggle');
+        var dropdownToggle = document.querySelector('.dropdown-toggle');
+        var isLocal = ['localhost', '127.0.0.1', ''].indexOf(window.location.hostname) !== -1;
+        var gaLoaded = false;
+        var consentKey = 'barbarossoft_cookie_consent';
+
+        function getConsent() {
+            try {
+                return window.localStorage.getItem(consentKey);
+            } catch (error) {
+                return null;
+            }
+        }
+
+        function setConsent(value) {
+            try {
+                window.localStorage.setItem(consentKey, value);
+            } catch (error) {}
+        }
+
+        function hasAnalyticsConsent() {
+            return getConsent() === 'accepted';
+        }
+
+        function loadAnalytics() {
+            if (gaLoaded || !hasAnalyticsConsent()) return;
+            gaLoaded = true;
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.BARBAROSSOFT_GA_ID;
+            document.head.appendChild(script);
+            window.gtag('js', new Date());
+            window.gtag('config', window.BARBAROSSOFT_GA_ID, { anonymize_ip: true });
+        }
+
+        function sendEvent(name, params) {
+            var payload = params || {};
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push(Object.assign({ event: name }, payload));
+            if (!isLocal && hasAnalyticsConsent() && typeof window.gtag === 'function') {
+                loadAnalytics();
+                window.gtag('event', name, payload);
+            }
+        }
+
+        function setupCookieBanner() {
+            var banner = document.querySelector('[data-cookie-banner]');
+            var accept = document.querySelector('[data-cookie-accept]');
+            var reject = document.querySelector('[data-cookie-reject]');
+            var current = getConsent();
+            if (current === 'accepted') {
+                loadAnalytics();
+                return;
+            }
+            if (!current && banner) banner.hidden = false;
+            if (accept) {
+                accept.addEventListener('click', function () {
+                    setConsent('accepted');
+                    if (banner) banner.hidden = true;
+                    loadAnalytics();
+                });
+            }
+            if (reject) {
+                reject.addEventListener('click', function () {
+                    setConsent('rejected');
+                    if (banner) banner.hidden = true;
+                });
+            }
+        }
+
+        if (toggle && nav) {
+            toggle.addEventListener('click', function () {
+                var open = nav.classList.toggle('is-open');
+                body.classList.toggle('menu-open', open);
+                toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+        }
+
+        if (dropdownToggle) {
+            dropdownToggle.addEventListener('click', function () {
+                var parent = dropdownToggle.closest('.nav-dropdown');
+                var open = parent.classList.toggle('is-open');
+                dropdownToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+        }
+
+        document.addEventListener('click', function (event) {
+            var tracked = event.target.closest('[data-track]');
+            if (!tracked) return;
+            sendEvent(tracked.getAttribute('data-track'), {
+                event_label: tracked.getAttribute('data-track-label') || tracked.textContent.trim()
+            });
+        });
+
+        document.querySelectorAll('[data-page-event]').forEach(function (node) {
+            sendEvent(node.getAttribute('data-page-event'), {
+                event_label: node.getAttribute('data-page-label') || window.location.pathname
+            });
+        });
+
+        document.querySelectorAll('[data-quote-form]').forEach(function (form) {
+            var started = false;
+            var successBox = form.querySelector('[data-js-success]');
+            form.addEventListener('focusin', function () {
+                if (started) return;
+                started = true;
+                sendEvent('contact_form_start', { event_label: 'quote_form' });
+            });
+            form.addEventListener('submit', function (event) {
+                var honeypot = form.querySelector('[name="website_url"]');
+                if (honeypot && honeypot.value) return;
+                if (!form.checkValidity()) {
+                    form.reportValidity();
+                    return;
+                }
+                event.preventDefault();
+                var formData = new FormData(form);
+                var lines = [
+                    'Merhaba Barbarossoft, teklif talebi göndermek istiyorum.',
+                    'Ad Soyad: ' + (formData.get('name') || ''),
+                    'Firma: ' + (formData.get('company') || ''),
+                    'Telefon: ' + (formData.get('phone') || ''),
+                    'E-posta: ' + (formData.get('email') || ''),
+                    'Hizmet: ' + (formData.get('service') || ''),
+                    'Web sitesi: ' + (formData.get('website') || ''),
+                    'Bütçe: ' + (formData.get('budget') || ''),
+                    'Açıklama: ' + (formData.get('description') || '')
+                ];
+                var url = 'https://wa.me/{{ site.whatsapp_raw }}?text=' + encodeURIComponent(lines.join('\n'));
+                sendEvent('contact_form_submit', { event_label: 'quote_form' });
+                sendEvent('quote_request', { event_label: formData.get('service') || 'quote_form' });
+                if (successBox) {
+                    successBox.hidden = false;
+                    successBox.querySelector('a').setAttribute('href', url);
+                }
+                window.open(url, '_blank', 'noopener');
+                form.reset();
+            });
+        });
+
+        setupCookieBanner();
+    })();
+    </script>
+</body>
+</html>

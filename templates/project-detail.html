@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block content %}
+<span class="sr-only" data-page-event="project_view" data-page-label="{{ project.slug }}"></span>
+<section class="page-hero project-detail-hero">
+    <div class="container page-hero-grid">
+        <div>
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Ana Sayfa</a>
+                <span>/</span>
+                <a href="/projeler">Projeler</a>
+                <span>/</span>
+                <span>{{ project.name }}</span>
+            </nav>
+            <p class="eyebrow">{{ project.sector }} · {{ project.location }}</p>
+            <h1>{{ project.name }} Projesi</h1>
+            <p>{{ project.summary }}</p>
+            <div class="hero-actions">
+                <a class="btn btn-primary" href="/iletisim" data-track="quote_request" data-track-label="{{ project.slug }}">Benzer Proje İçin Görüşelim</a>
+                {% if project.external_url %}
+                    <a class="btn btn-outline" href="{{ project.external_url }}" target="_blank" rel="noopener">Siteyi Ziyaret Et</a>
+                {% endif %}
+            </div>
+        </div>
+        <figure class="project-showcase">
+            <img src="{{ project.image }}" alt="{{ project.name }} görseli" width="520" height="340">
+        </figure>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container case-grid">
+        <article>
+            <span>01</span>
+            <h2>İhtiyaç / Problem</h2>
+            <p>{{ project.problem }}</p>
+        </article>
+        <article>
+            <span>02</span>
+            <h2>Uygulanan Çözüm</h2>
+            <p>{{ project.solution }}</p>
+        </article>
+        <article>
+            <span>03</span>
+            <h2>Doğrulanabilir Sonuç</h2>
+            <p>{{ project.result }}</p>
+        </article>
+    </div>
+</section>
+
+<section class="section section-muted">
+    <div class="container two-column">
+        <div>
+            <p class="eyebrow">Yapılan hizmetler</p>
+            <h2>Proje kapsamı</h2>
+            <div class="tag-row large">
+                {% for item in project.services %}
+                    <span>{{ item }}</span>
+                {% endfor %}
+            </div>
+        </div>
+        <div>
+            <p class="eyebrow">Özellikler</p>
+            <h2>Kullanılan yapı</h2>
+            <ul class="check-list">
+                {% for item in project.features %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-heading">
+            <p class="eyebrow">İlgili hizmetler</p>
+            <h2>Bu proje benzeri çalışmalar için başlangıç noktaları.</h2>
+        </div>
+        <div class="mini-service-grid">
+            <article class="mini-card">
+                <i class="fa-solid fa-code"></i>
+                <h3>Kurumsal Web Tasarım</h3>
+                <p>Mobil uyumlu, hızlı ve iletişim odaklı web sitesi yapısı.</p>
+                <a href="/kayseri-web-tasarim">İncele</a>
+            </article>
+            <article class="mini-card">
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                <h3>Yerel SEO</h3>
+                <p>Hizmet ve bölge sayfalarıyla arama görünürlüğü altyapısı.</p>
+                <a href="/yerel-seo">İncele</a>
+            </article>
+            <article class="mini-card">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <h3>Google Haritalar</h3>
+                <p>Profil ve web sitesi uyumunu güçlendiren yerel düzenleme.</p>
+                <a href="/google-haritalar-optimizasyonu">İncele</a>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="section final-cta">
+    <div class="container cta-panel">
+        <h2>{{ project.sector }} sektörüne uygun bir dijital altyapı kuralım.</h2>
+        <p>İşletmenizin hizmetlerini ve hedef bölgelerini birlikte değerlendirip teklif odaklı sayfa akışı hazırlayalım.</p>
+        <div class="hero-actions">
+            <a class="btn btn-outline" href="{{ whatsapp_url() }}" target="_blank" rel="noopener" data-track="whatsapp_click" data-track-label="{{ project.slug }}_bottom">WhatsApp'tan Yaz</a>
+            <a class="btn btn-primary" href="/iletisim" data-track="quote_request" data-track-label="{{ project.slug }}_bottom">Ücretsiz Ön Görüşme</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

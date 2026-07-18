@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block content %}
+<article>
+    <section class="page-hero">
+        <div class="container narrow">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Ana Sayfa</a>
+                <span>/</span>
+                <a href="/blog">Blog</a>
+                <span>/</span>
+                <span>{{ post.title }}</span>
+            </nav>
+            <p class="eyebrow">{{ post.category }} · {{ post.reading_time }}</p>
+            <h1>{{ post.title }}</h1>
+            <p>{{ post.description }}</p>
+            <div class="article-meta">
+                <span>Yayın: {{ post.date }}</span>
+                <span>Güncelleme: {{ post.updated }}</span>
+                <span>Yazar: Barbarossoft</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container article-layout">
+            <aside class="toc">
+                <h2>İçindekiler</h2>
+                {% for section in post.sections %}
+                    <a href="#bolum-{{ loop.index }}">{{ section[0] }}</a>
+                {% endfor %}
+            </aside>
+            <div class="article-content">
+                {% for section in post.sections %}
+                    <section id="bolum-{{ loop.index }}">
+                        <h2>{{ section[0] }}</h2>
+                        <p>{{ section[1] }}</p>
+                    </section>
+                {% endfor %}
+                <div class="author-box">
+                    <strong>Barbarossoft</strong>
+                    <p>Kayseri merkezli butik dijital ajans. Yerel işletmeler için web sitesi, yerel SEO, Google Haritalar ve Google Ads altyapıları geliştirir.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</article>
+
+<section class="section section-muted">
+    <div class="container">
+        <div class="section-heading">
+            <p class="eyebrow">İlgili yazılar</p>
+            <h2>Okumaya devam edin.</h2>
+        </div>
+        <div class="blog-grid">
+            {% for item in related_posts %}
+                <article class="blog-card">
+                    <p class="project-sector">{{ item.category }}</p>
+                    <h3><a href="{{ item.path }}">{{ item.title }}</a></h3>
+                    <p>{{ item.description }}</p>
+                </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section final-cta">
+    <div class="container cta-panel">
+        <h2>Bu konuyu işletmeniz için uygulamaya çevirelim.</h2>
+        <p>Mevcut web sitenizi veya Google görünürlüğünüzü birlikte inceleyip ilk adımları netleştirelim.</p>
+        <a class="btn btn-primary" href="/iletisim" data-track="quote_request" data-track-label="{{ post.slug }}">Ücretsiz Ön Görüşme</a>
+    </div>
+</section>
+{% endblock %}

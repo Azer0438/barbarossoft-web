@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+
+{% block content %}
+<span class="sr-only" data-page-event="service_view" data-page-label="{{ service.slug }}"></span>
+<section class="page-hero service-hero">
+    <div class="container page-hero-grid">
+        <div>
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Ana Sayfa</a>
+                <span>/</span>
+                <a href="/hizmetler">Hizmetler</a>
+                <span>/</span>
+                <span>{{ service.title }}</span>
+            </nav>
+            <p class="eyebrow">{{ service.category }}</p>
+            <h1>{{ service.title }}</h1>
+            <p>{{ service.lead }}</p>
+            <div class="hero-actions">
+                <a class="btn btn-primary" href="/iletisim" data-track="quote_request" data-track-label="{{ service.slug }}">Teklif Al</a>
+                <a class="btn btn-outline" href="{{ whatsapp_url() }}" target="_blank" rel="noopener" data-track="whatsapp_click" data-track-label="{{ service.slug }}">WhatsApp'tan Yaz</a>
+            </div>
+        </div>
+        <aside class="service-summary-card">
+            <div class="card-icon"><i class="fa-solid {{ service.icon }}"></i></div>
+            <h2>Bu hizmette odak</h2>
+            <ul class="check-list">
+                {% for benefit in service.benefits %}
+                    <li>{{ benefit }}</li>
+                {% endfor %}
+            </ul>
+        </aside>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container three-blocks">
+        <article>
+            <h2>Kimler için uygun?</h2>
+            <ul class="check-list">
+                {% for item in service.who %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </article>
+        <article>
+            <h2>Sık görülen sorunlar</h2>
+            <ul class="check-list">
+                {% for item in service.problems %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </article>
+        <article>
+            <h2>Yaklaşımımız</h2>
+            <ul class="check-list">
+                {% for item in service.approach %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </article>
+    </div>
+</section>
+
+<section class="section section-muted">
+    <div class="container two-column">
+        <div>
+            <p class="eyebrow">Kapsam</p>
+            <h2>Hizmet kapsamında neler var?</h2>
+            <div class="scope-grid">
+                {% for item in service.scope %}
+                    <span>{{ item }}</span>
+                {% endfor %}
+            </div>
+        </div>
+        <div>
+            <p class="eyebrow">Süreç</p>
+            <h2>Nasıl ilerliyoruz?</h2>
+            <ol class="ordered-list">
+                {% for item in service.process %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+            </ol>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-heading">
+            <p class="eyebrow">Proje örnekleri</p>
+            <h2>Gerçek projelerden seçilmiş çalışmalar.</h2>
+        </div>
+        <div class="project-grid compact-projects">
+            {% for project in projects %}
+                <article class="project-card">
+                    <a href="{{ project.path }}" class="project-image" data-track="project_view" data-track-label="{{ project.slug }}">
+                        <img src="{{ project.image }}" alt="{{ project.name }} proje görseli" loading="lazy" width="360" height="220">
+                    </a>
+                    <div class="project-body">
+                        <p class="project-sector">{{ project.sector }}</p>
+                        <h3>{{ project.name }}</h3>
+                        <p>{{ project.result }}</p>
+                        <a class="inline-link" href="{{ project.path }}">İncele <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section section-muted">
+    <div class="container faq-layout">
+        <div class="section-heading align-left">
+            <p class="eyebrow">SSS</p>
+            <h2>{{ service.title }} hakkında sorular.</h2>
+        </div>
+        <div class="faq-list">
+            {% for item in service.faq %}
+                <details class="faq-item">
+                    <summary>{{ item.question }}</summary>
+                    <p>{{ item.answer }}</p>
+                </details>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section final-cta">
+    <div class="container cta-panel">
+        <h2>{{ service.title }} için kapsamı birlikte netleştirelim.</h2>
+        <p>İşletmenizin hizmetlerini, hedef bölgesini ve iletişim akışını konuşup uygulanabilir bir plan çıkaralım.</p>
+        <div class="hero-actions">
+            <a class="btn btn-outline" href="{{ whatsapp_url() }}" target="_blank" rel="noopener" data-track="whatsapp_click" data-track-label="{{ service.slug }}_bottom">WhatsApp'tan Yaz</a>
+            <a class="btn btn-primary" href="/iletisim" data-track="quote_request" data-track-label="{{ service.slug }}_bottom">Teklif Al</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

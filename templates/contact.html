@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-hero">
+    <div class="container narrow">
+        <p class="eyebrow">İletişim</p>
+        <h1>Web siteniz, Google görünürlüğünüz veya reklam hesabınız için görüşelim.</h1>
+        <p>Kısa formu doldurun ya da doğrudan WhatsApp üzerinden yazın. Mevcut durumunuzu ve hedefinizi birlikte netleştirip uygulanabilir kapsam çıkaralım.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container contact-grid">
+        <aside class="contact-panel">
+            <h2>Hızlı iletişim</h2>
+            <ul class="contact-list">
+                <li>
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <span>Telefon</span>
+                        <a href="tel:{{ site.phone_raw }}" data-track="phone_click" data-track-label="contact_page">{{ site.phone_display }}</a>
+                    </div>
+                </li>
+                <li>
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <div>
+                        <span>WhatsApp</span>
+                        <a href="{{ whatsapp_url() }}" target="_blank" rel="noopener" data-track="whatsapp_click" data-track-label="contact_page">WhatsApp'tan Yaz</a>
+                    </div>
+                </li>
+                <li>
+                    <i class="fa-regular fa-envelope"></i>
+                    <div>
+                        <span>E-posta</span>
+                        <a href="mailto:{{ site.email }}" data-track="email_click" data-track-label="contact_page">{{ site.email }}</a>
+                    </div>
+                </li>
+                <li>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <span>Konum</span>
+                        <p>{{ site.location }}</p>
+                    </div>
+                </li>
+                <li>
+                    <i class="fa-brands fa-google"></i>
+                    <div>
+                        <span>Google İşletme Profili</span>
+                        <a href="{{ site.business_profile }}" target="_blank" rel="noopener">Profili Aç</a>
+                    </div>
+                </li>
+                <li>
+                    <i class="fa-regular fa-clock"></i>
+                    <div>
+                        <span>Çalışma saatleri</span>
+                        <p>{{ site.hours }}</p>
+                    </div>
+                </li>
+            </ul>
+        </aside>
+        <div>
+            <h2>Teklif formu</h2>
+            {% include "partials/contact-form.html" %}
+        </div>
+    </div>
+</section>
+{% endblock %}

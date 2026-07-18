@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-hero">
+    <div class="container narrow">
+        <p class="eyebrow">Hizmetler</p>
+        <h1>Yerel işletmeler için web sitesi, SEO, Haritalar ve reklam altyapısı.</h1>
+        <p>Her hizmet aynı hedefe bağlanır: daha anlaşılır bir dijital vitrin, daha görünür sayfalar ve daha kolay iletişim.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container service-grid">
+        {% for service in services %}
+            <article class="service-card">
+                <div class="card-icon"><i class="fa-solid {{ service.icon }}"></i></div>
+                <p class="project-sector">{{ service.category }}</p>
+                <h2>{{ service.title }}</h2>
+                <p>{{ service.summary }}</p>
+                <ul class="check-list">
+                    {% for benefit in service.benefits %}
+                        <li>{{ benefit }}</li>
+                    {% endfor %}
+                </ul>
+                <a class="inline-link" href="{{ service.path }}">Detayları İncele <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="section final-cta">
+    <div class="container cta-panel">
+        <h2>Hangi hizmetin daha uygun olduğunu birlikte netleştirelim.</h2>
+        <p>İşletmenizin hedefini ve mevcut durumunu anlattığınızda kapsamı sade bir yol haritasına dönüştürelim.</p>
+        <a class="btn btn-primary" href="/iletisim" data-track="quote_request" data-track-label="services_index">Ücretsiz Ön Görüşme</a>
+    </div>
+</section>
+{% endblock %}

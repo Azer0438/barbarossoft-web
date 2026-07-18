@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-hero">
+    <div class="container narrow">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Ana Sayfa</a>
+            <span>/</span>
+            <span>Projeler</span>
+        </nav>
+        <p class="eyebrow">Projeler</p>
+        <h1>Gerçek işletmeler için hazırlanan dijital altyapı çalışmaları.</h1>
+        <p>Her projeyi ihtiyaç, çözüm ve yapılan somut düzenlemeler üzerinden anlatıyoruz. Doğrulanmayan performans rakamları kullanmıyoruz.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container project-grid">
+        {% for project in projects %}
+            <article class="project-card">
+                <a href="{{ project.path }}" class="project-image" data-track="project_view" data-track-label="{{ project.slug }}">
+                    <img src="{{ project.image }}" alt="{{ project.name }} proje görseli" loading="lazy" width="420" height="260">
+                </a>
+                <div class="project-body">
+                    <p class="project-sector">{{ project.sector }} · {{ project.location }}</p>
+                    <h2>{{ project.name }}</h2>
+                    <p>{{ project.summary }}</p>
+                    <div class="tag-row">
+                        {% for item in project.services %}
+                            <span>{{ item }}</span>
+                        {% endfor %}
+                    </div>
+                    <a class="inline-link" href="{{ project.path }}">Proje Detayı <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="section final-cta">
+    <div class="container cta-panel">
+        <h2>Benzer bir yapıyı işletmeniz için planlayalım.</h2>
+        <p>Hizmetlerinizi, hedef bölgenizi ve iletişim akışınızı inceleyip net bir proje kapsamı çıkaralım.</p>
+        <a class="btn btn-primary" href="/iletisim" data-track="quote_request" data-track-label="projects_index">Ücretsiz Ön Görüşme</a>
+    </div>
+</section>
+{% endblock %}

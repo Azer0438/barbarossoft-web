@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-hero">
+    <div class="container narrow">
+        <p class="eyebrow">Hakkımızda</p>
+        <h1>Kayseri merkezli, odaklı ve doğrudan iletişim kuran butik dijital ajans.</h1>
+        <p>Barbarossoft, yerel işletmelerin dijitalde daha güvenilir görünmesi, Google'da bulunması ve daha fazla müşteri talebi alması için web tasarım, yerel SEO, Google Haritalar ve Google Ads çözümleri geliştirir.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container two-column">
+        <div class="rich-text">
+            <h2>Nasıl çalışıyoruz?</h2>
+            <p>Her projede önce işletmenin hedeflerini, hizmet bölgelerini ve müşteri kazanma sürecini anlamaya odaklanırız. Gereksiz özellikler eklemek yerine ölçülebilir, yönetilebilir ve işletmeye gerçek katkı sağlayan dijital sistemler kurarız.</p>
+            <p>Küçük ve odaklı yapımız sayesinde müşterilerimiz doğrudan işi planlayan ve uygulayan uzmanla iletişim kurar. Bu da sürecin daha hızlı anlaşılmasını ve kararların daha net alınmasını sağlar.</p>
+            <a class="btn btn-primary" href="/iletisim" data-track="quote_request" data-track-label="about">Görüşme Planla</a>
+        </div>
+        <div class="why-list">
+            {% for item in why_items %}
+                <div class="why-item">
+                    <i class="fa-solid fa-check"></i>
+                    <p>{{ item }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section section-muted">
+    <div class="container">
+        <div class="section-heading">
+            <p class="eyebrow">Odak alanları</p>
+            <h2>Yerel işletmeler için sade ama güçlü bir dijital sistem.</h2>
+        </div>
+        <div class="mini-service-grid">
+            <article class="mini-card">
+                <i class="fa-solid fa-location-dot"></i>
+                <h3>Kayseri ve çevresi</h3>
+                <p>Özellikle telefon, WhatsApp ve teklif formu üzerinden müşteri kazanan yerel işletmeler.</p>
+            </article>
+            <article class="mini-card">
+                <i class="fa-solid fa-chart-line"></i>
+                <h3>Ölçülebilir akış</h3>
+                <p>Sayfa görüntüleme, form başlangıcı, telefon ve WhatsApp tıklamalarını izleyen altyapı.</p>
+            </article>
+            <article class="mini-card">
+                <i class="fa-solid fa-layer-group"></i>
+                <h3>İhtiyaca özel kapsam</h3>
+                <p>Web sitesi, yerel SEO, Haritalar ve reklam adımlarını işletmenin hedeflerine göre seçme.</p>
+            </article>
+        </div>
+    </div>
+</section>
+{% endblock %}
